@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // Common
+    <dimen name="headerTop">70dp</dimen>
+    <dimen name="subHeader">25dp</dimen>
+    <dimen name="horizontalMargin">16dp</dimen>
+    <dimen name="cornerRadius">8dp</dimen>
+
+    // Button
+    <dimen name="strokeWidth">2dp</dimen>
+</resources>

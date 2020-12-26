@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MovieDB</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="write_login_and_password">Укажите логин и пароль, которые вы использовали для входа</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="enter">Войти</string>
 </resources>
