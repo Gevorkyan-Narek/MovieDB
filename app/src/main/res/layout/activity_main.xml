@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ViewStyle"
+    android:background="@color/bg_black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -23,69 +23,72 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontalMargin"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/defaultMarginTop"
         android:layout_marginEnd="@dimen/horizontalMargin"
         android:text="@string/write_login_and_password"
-        android:textSize="16sp"
+        android:textSize="@dimen/textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginInput"
+        android:id="@+id/loginInputContainer"
         style="@style/InputText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/horizontalMargin"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/spaceIntoSubHeaderAndEditText"
         android:layout_marginEnd="@dimen/horizontalMargin"
         android:hint="@string/login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hint">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/light"
             android:textCursorDrawable="@drawable/input_cursor"
-            android:textSize="16sp" />
+            android:textSize="@dimen/textSize" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordInput"
+        android:id="@+id/passwordInputContainer"
         style="@style/InputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontalMargin"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/defaultMarginTop"
         android:layout_marginEnd="@dimen/horizontalMargin"
         android:hint="@string/password"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginInput">
+        app:layout_constraintTop_toBottomOf="@id/loginInputContainer">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPassword"
             android:textColor="@color/light"
             android:textCursorDrawable="@drawable/input_cursor"
-            android:textSize="16sp" />
+            android:textSize="@dimen/textSize" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/enter"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/horizontalMargin"
         android:layout_marginEnd="@dimen/horizontalMargin"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/buttonMarginBottom"
         android:backgroundTint="@color/button_background"
         android:text="@string/enter"
         android:textAllCaps="false"
         android:textColor="@color/gray"
-        android:textSize="16sp"
+        android:textSize="@dimen/textSize"
         app:cornerRadius="@dimen/cornerRadius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

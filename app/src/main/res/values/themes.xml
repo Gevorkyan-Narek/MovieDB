@@ -16,11 +16,7 @@
     </style>
 
     <style name="Header">
-        <item name="android:textSize">32sp</item>
-    </style>
-
-    <style name="ViewStyle">
-        <item name="android:background">@color/bg_black</item>
+        <item name="android:textSize">@dimen/headerTextSize</item>
     </style>
 
     <style name="InputText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
