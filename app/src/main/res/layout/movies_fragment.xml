@@ -21,7 +21,7 @@
         android:layout_marginTop="@dimen/spaceIntoSubHeaderAndEditText"
         android:src="@drawable/background_picture"
         android:scaleType="fitEnd"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/header"
@@ -37,14 +37,4 @@
         android:queryHint="Поиск фильмов"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/light_black"
-        app:itemIconTint="@color/bottom_navigation"
-        app:itemTextColor="@color/bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

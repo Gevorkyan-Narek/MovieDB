@@ -49,4 +49,11 @@
         <item name="android:layout_marginStart">@dimen/horizontalMargin</item>
         <item name="android:layout_marginEnd">@dimen/horizontalMargin</item>
     </style>
+
+    <style name="Body.Button">
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/cornerRadius</item>
+        <item name="android:backgroundTint">@color/button_background</item>
+        <item name="android:layout_marginBottom">@dimen/buttonMarginBottom</item>
+    </style>
 </resources>

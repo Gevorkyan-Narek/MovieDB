@@ -14,13 +14,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import retrofit2.HttpException
 
-class AuthFragment : Fragment() {
+class AuthFragment(val callback: AuthFragmentCallback) : Fragment() {
 
     private lateinit var binding: AuthFragmentBinding
     private var retrofit = TheMovieNetworkConnect.getInstance()
 
-    private val apiKey = "7a00b045a944e9396f766b8e2b906775"
     private var requestToken = ""
+    private lateinit var apiKey: String
 
     private var session: Disposable? = null
     private var sessionWithLogin: Disposable? = null
@@ -32,6 +32,7 @@ class AuthFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = AuthFragmentBinding.inflate(inflater, container, false)
+        arguments?.getString("apiKey")?.let { apiKey = it }
         createRequestToken()
         binding.enter.setOnClickListener {
             if (requestToken.isNotBlank())
@@ -47,9 +48,7 @@ class AuthFragment : Fragment() {
         ).observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
-                    fragmentManager?.beginTransaction()
-                        ?.replace(R.id.mainFragment, MoviesFragment())
-                        ?.commit()
+                    callback.successAuth(it.sessionId)
                 },
                 {
                     Log.d("Session Error", it.message ?: "null")

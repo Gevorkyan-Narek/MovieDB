@@ -72,25 +72,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
+        android:ems="12"
         android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordInputContainer"
-        tools:text="Что-то пошло не так, попробуйте войти позже"
-        android:ems="12"/>
+        tools:text="Что-то пошло не так, попробуйте войти позже" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/enter"
+        style="@style/Body.Button"
         android:layout_width="0dp"
         android:layout_height="@dimen/heightButton"
-        android:layout_marginStart="@dimen/horizontalMargin"
-        android:layout_marginEnd="@dimen/horizontalMargin"
-        android:layout_marginBottom="@dimen/buttonMarginBottom"
-        android:backgroundTint="@color/button_background"
         android:text="@string/enter"
-        android:textAllCaps="false"
         android:textColor="@color/gray"
-        android:textSize="@dimen/textSize"
-        app:cornerRadius="@dimen/cornerRadius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
