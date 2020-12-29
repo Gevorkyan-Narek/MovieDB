@@ -6,7 +6,7 @@ import io.reactivex.Maybe
 import io.reactivex.Single
 import retrofit2.http.*
 
-interface MovieDBInterface {
+interface AuthorizationInterface {
 
     @GET("authentication/token/new")
     fun createRequestToken(@Query("api_key") apiKey: String): Single<Token>

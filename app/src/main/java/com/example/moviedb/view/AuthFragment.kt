@@ -14,10 +14,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import retrofit2.HttpException
 
-class AuthFragment(val callback: AuthFragmentCallback) : Fragment() {
+class AuthFragment(private val callback: AuthFragmentCallback) : Fragment() {
 
     private lateinit var binding: AuthFragmentBinding
-    private var retrofit = TheMovieNetworkConnect.getInstance()
+    private var retrofit = TheMovieNetworkConnect.getAuth()
 
     private var requestToken = ""
     private lateinit var apiKey: String
@@ -64,7 +64,6 @@ class AuthFragment(val callback: AuthFragmentCallback) : Fragment() {
         ).observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
-                    Log.d("DoOnSuccess", "Start")
                     createSession(it)
                 },
                 {

@@ -9,15 +9,11 @@ import com.example.moviedb.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), AuthFragmentCallback {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var sessionId: String
 
     private val apiKey = "7a00b045a944e9396f766b8e2b906775"
 
     private val bundle = Bundle().apply {
         putString("apiKey", apiKey)
-
-        if (sessionId.isNotEmpty())
-            putString("sessionId", sessionId)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +62,7 @@ class MainActivity : AppCompatActivity(), AuthFragmentCallback {
     }
 
     override fun successAuth(sessionId: String) {
-        this.sessionId = sessionId
+        bundle.putString("sessionId", sessionId)
         binding.navigation.visibility = View.VISIBLE
         changeFragment(R.id.movies)
     }
