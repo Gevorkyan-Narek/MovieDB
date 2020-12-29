@@ -59,5 +59,4 @@ dependencies {
     // RxJava
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
     implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
-
 }

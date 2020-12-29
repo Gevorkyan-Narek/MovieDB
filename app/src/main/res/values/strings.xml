@@ -5,4 +5,10 @@
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
     <string name="enter">Войти</string>
+    <string name="we_will_find_any_film">Найдем любой фильм на ваш вкус</string>
+    <string name="movies">Фильмы</string>
+    <string name="favourites">Избранное</string>
+    <string name="profile">Профиль</string>
+    <string name="wrong_login_and_password">Неверный логин или пароль</string>
+    <string name="something_wrong">Что-то пошло не так, попробуйте войти позже</string>
 </resources>

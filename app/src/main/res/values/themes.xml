@@ -13,14 +13,32 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/bg_black</item>
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/light</item>
+        <item name="android:backgroundTint">@color/bg_black</item>
     </style>
 
     <style name="Header">
         <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:layout_marginStart">@dimen/horizontalMargin</item>
+        <item name="android:layout_marginTop">@dimen/headerTop</item>
+    </style>
+
+    <style name="Body">
+        <item name="android:layout_marginStart">@dimen/horizontalMargin</item>
+        <item name="android:layout_marginEnd">@dimen/horizontalMargin</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+
+    <style name="Body.SearchView">
+        <item name="android:textColorHint">@color/light</item>
+        <item name="android:textColor">@color/light</item>
+        <item name="iconifiedByDefault">false</item>
+        <item name="android:background">@drawable/corner_rectangle</item>
+        <item name="android:radius">@dimen/cornerRadius</item>
+        <item name="android:backgroundTint">@color/light_black</item>
     </style>
 
     <style name="InputText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/input_colors</item>
+        <item name="boxStrokeColor">@color/input_text</item>
         <item name="boxStrokeWidth">@dimen/strokeWidth</item>
         <item name="hintTextColor">@color/gray</item>
         <item name="android:textColorHint">@color/gray</item>
@@ -28,5 +46,7 @@
         <item name="boxCornerRadiusBottomStart">@dimen/cornerRadius</item>
         <item name="boxCornerRadiusTopEnd">@dimen/cornerRadius</item>
         <item name="boxCornerRadiusTopStart">@dimen/cornerRadius</item>
+        <item name="android:layout_marginStart">@dimen/horizontalMargin</item>
+        <item name="android:layout_marginEnd">@dimen/horizontalMargin</item>
     </style>
 </resources>

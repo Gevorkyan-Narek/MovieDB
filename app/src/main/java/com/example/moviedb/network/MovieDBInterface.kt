@@ -2,6 +2,7 @@ package com.example.moviedb.network
 
 import com.example.moviedb.models.Session
 import com.example.moviedb.models.Token
+import io.reactivex.Maybe
 import io.reactivex.Single
 import retrofit2.http.*
 
@@ -17,7 +18,7 @@ interface MovieDBInterface {
         @Field("password") password: String,
         @Field("request_token") requestToken: String,
         @Query("api_key") apiKey: String
-    ): Single<Token>
+    ): Maybe<Token>
 
     @FormUrlEncoded
     @POST("authentication/session/new")

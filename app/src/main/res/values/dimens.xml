@@ -9,6 +9,7 @@
     <dimen name="headerTextSize">32sp</dimen>
     <dimen name="textSize">16sp</dimen>
     <dimen name="spaceIntoSubHeaderAndEditText">32dp</dimen>
+    <dimen name="heightButton">60dp</dimen>
 
     // Button
     <dimen name="strokeWidth">2dp</dimen>
