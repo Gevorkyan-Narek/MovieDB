@@ -12,4 +12,7 @@
     <string name="wrong_login_and_password">Неверный логин или пароль</string>
     <string name="something_wrong">Что-то пошло не так, попробуйте войти позже</string>
     <string name="exit">Выйти</string>
+    <string name="favourite">Избранное</string>
+    <string name="you_not_added_any_movies">Вы не добавили ни одного фильма</string>
+    <string name="find_favourite_movies">Найти любимые фильмы</string>
 </resources>

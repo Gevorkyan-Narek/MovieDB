@@ -43,19 +43,19 @@ class MainActivity : AppCompatActivity(), AuthFragmentCallback {
     }
 
     private fun changeFragment(item: Int): Boolean {
-        val fragment = when (item) {
-            R.id.movies -> MoviesFragment()
-            R.id.profile -> ProfileFragment()
-            R.id.favourite -> FavouriteFragment()
-            else -> MoviesFragment()
-        }
-
-        fragment.arguments = bundle
+        val moviesFragment = MoviesFragment().apply { arguments = bundle }
+        val profileFragment = ProfileFragment().apply { arguments = bundle }
+        val favouriteFragment = FavouriteFragment().apply { arguments = bundle }
 
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.mainFragment,
-                fragment
+                when (item) {
+                    R.id.movies -> moviesFragment
+                    R.id.favourite -> favouriteFragment
+                    R.id.profile -> profileFragment
+                    else -> moviesFragment
+                }
             ).commit()
 
         return true
