@@ -13,12 +13,3 @@ data class Account(
     val avatar: TMDB
 )
 
-data class TMDB(
-    @Json(name = "tmdb")
-    val tmdb: Avatar
-)
-
-data class Avatar(
-    @Json(name = "avatar_path")
-    val avatarPath: String
-)

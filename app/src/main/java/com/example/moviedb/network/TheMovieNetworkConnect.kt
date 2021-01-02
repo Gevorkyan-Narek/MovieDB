@@ -22,7 +22,7 @@ class TheMovieNetworkConnect {
             .baseUrl(BASE_URL)
             .build()
 
-        fun getAuth(): AuthorizationInterface = retrofitInstance.create(AuthorizationInterface::class.java)
-        fun getAccount(): ProfileInterface = retrofitInstance.create(ProfileInterface::class.java)
+        fun getAuth(): AuthorizationNetwork = retrofitInstance.create(AuthorizationNetwork::class.java)
+        fun getAccount(): ProfileNetwork = retrofitInstance.create(ProfileNetwork::class.java)
     }
 }

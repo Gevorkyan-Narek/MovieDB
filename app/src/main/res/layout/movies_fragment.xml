@@ -20,11 +20,13 @@
         android:layout_height="0dp"
         android:layout_marginTop="29dp"
         android:scaleType="fitEnd"
-        android:src="@drawable/background_picture"
+        android:src="@drawable/girl_picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription" />
 
     <SearchView

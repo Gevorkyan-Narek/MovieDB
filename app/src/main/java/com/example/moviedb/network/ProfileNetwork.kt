@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ProfileInterface {
+interface ProfileNetwork {
 
     @GET("account")
     fun getAccountId(@Query("api_key") apiKey: String, @Query("session_id") sessionId: String): Single<Account>

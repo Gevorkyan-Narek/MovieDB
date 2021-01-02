@@ -31,6 +31,8 @@
     <style name="Body.SearchView">
         <item name="android:textColorHint">@color/light</item>
         <item name="android:textColor">@color/light</item>
+        <item name="android:editTextColor">@color/light</item>
+        <item name="android:textColorPrimary">@color/light</item>
         <item name="iconifiedByDefault">false</item>
         <item name="android:background">@drawable/corner_rectangle</item>
         <item name="android:radius">@dimen/cornerRadius</item>
