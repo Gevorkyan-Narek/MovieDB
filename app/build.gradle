@@ -70,4 +70,8 @@ dependencies {
     implementation "com.github.moxy-community:moxy:2.2.1"
     implementation "com.github.moxy-community:moxy-androidx:2.2.1"
     kapt "com.github.moxy-community:moxy-compiler:2.2.1"
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:2.30.1"
+    kapt "com.google.dagger:dagger-compiler:2.30.1"
 }

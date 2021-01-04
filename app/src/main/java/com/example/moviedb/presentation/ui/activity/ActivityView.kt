@@ -1,4 +1,4 @@
-package com.example.moviedb.view.ui.activity
+package com.example.moviedb.presentation.ui.activity
 
 import androidx.fragment.app.Fragment
 import moxy.MvpView
@@ -10,5 +10,5 @@ interface ActivityView: MvpView {
     fun changeFragment(fragment: Fragment)
 
     @AddToEndSingle
-    fun isVisibleBottomNavigation()
+    fun successAuth()
 }

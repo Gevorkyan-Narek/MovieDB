@@ -1,7 +1,8 @@
-package com.example.moviedb.network
+package com.example.moviedb.data.remote
 
-import com.example.moviedb.models.Session
-import com.example.moviedb.models.Token
+import com.example.moviedb.data.models.Account
+import com.example.moviedb.data.models.Session
+import com.example.moviedb.data.models.Token
 import io.reactivex.Completable
 import io.reactivex.Maybe
 import io.reactivex.Single
@@ -19,7 +20,7 @@ interface AuthorizationNetwork {
         @Field("password") password: String,
         @Field("request_token") requestToken: String,
         @Query("api_key") apiKey: String
-    ): Maybe<Token>
+    ): Single<Token>
 
     @FormUrlEncoded
     @POST("authentication/session/new")
@@ -34,4 +35,7 @@ interface AuthorizationNetwork {
         @Field("session_id") sessionId: String,
         @Query("api_key") apiKey: String
     ) : Completable
+
+    @GET("account")
+    fun getAccountId(@Query("api_key") apiKey: String, @Query("session_id") sessionId: String): Single<Account>
 }

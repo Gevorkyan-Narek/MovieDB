@@ -1,4 +1,4 @@
-package com.example.moviedb.view.ui.auth
+package com.example.moviedb.presentation.ui.auth
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
@@ -7,5 +7,5 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 interface AuthView: MvpView {
 
     fun error(message: Int)
-    fun success(sessionId: String)
+    fun success()
 }

@@ -1,11 +1,11 @@
-package com.example.moviedb.view.ui.activity
+package com.example.moviedb.presentation.ui.activity
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.moviedb.R
 import com.example.moviedb.databinding.ActivityMainBinding
-import com.example.moviedb.view.presenter.ActivityPresenter
+import com.example.moviedb.presentation.presenters.ActivityPresenter
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 
@@ -34,7 +34,6 @@ class MainActivity : MvpAppCompatActivity(), ActivityView {
             }
             true
         }
-        binding.navigation.selectedItemId = R.id.movies
     }
 
     override fun changeFragment(fragment: Fragment) {
@@ -45,11 +44,12 @@ class MainActivity : MvpAppCompatActivity(), ActivityView {
             ).commit()
     }
 
-    override fun isVisibleBottomNavigation() {
+    override fun successAuth() {
         binding.navigation.visibility =
             if (binding.navigation.visibility == View.GONE)
                 View.VISIBLE
             else
                 View.GONE
+        binding.navigation.selectedItemId = R.id.movies
     }
 }

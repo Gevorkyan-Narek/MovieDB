@@ -1,4 +1,4 @@
-package com.example.moviedb.view.ui.profile
+package com.example.moviedb.presentation.ui.profile
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle

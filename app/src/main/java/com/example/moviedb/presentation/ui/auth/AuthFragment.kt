@@ -1,4 +1,4 @@
-package com.example.moviedb.view.ui.auth
+package com.example.moviedb.presentation.ui.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.moviedb.R
 import com.example.moviedb.databinding.AuthFragmentBinding
-import com.example.moviedb.view.presenter.AuthPresenter
-import com.example.moviedb.view.ui.activity.MainActivity
+import com.example.moviedb.presentation.presenters.AuthPresenter
+import com.example.moviedb.presentation.ui.activity.MainActivity
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -25,14 +25,13 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
     ): View {
         val binding = AuthFragmentBinding.inflate(inflater, container, false)
         authBinding = binding
-        arguments?.getString("apiKey")?.let { authPresenter.apiKey = it }
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
         authBinding?.enter?.setOnClickListener {
-            authPresenter.createSessionWithLogin(
+            authPresenter.authorize(
                 authBinding?.loginInput?.text.toString(),
                 authBinding?.passwordInput?.text.toString()
             )
@@ -52,15 +51,12 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
         authBinding?.errorOutput?.setText(message)
     }
 
-    override fun success(sessionId: String) {
-        (activity as MainActivity).presenter.successAuth(sessionId)
+    override fun success() {
+        (activity as MainActivity).presenter.successAuth()
     }
 
     override fun onDestroyView() {
         authBinding = null
         super.onDestroyView()
-//        session?.dispose()
-//        sessionWithLogin?.dispose()
-//        token?.dispose()
     }
 }

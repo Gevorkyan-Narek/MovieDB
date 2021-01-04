@@ -1,4 +1,4 @@
-package com.example.moviedb.models
+package com.example.moviedb.data.models
 
 import com.squareup.moshi.Json
 

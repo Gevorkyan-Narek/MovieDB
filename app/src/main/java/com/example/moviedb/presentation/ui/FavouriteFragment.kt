@@ -1,4 +1,4 @@
-package com.example.moviedb.view.ui
+package com.example.moviedb.presentation.ui
 
 import androidx.fragment.app.Fragment
 import com.example.moviedb.R
