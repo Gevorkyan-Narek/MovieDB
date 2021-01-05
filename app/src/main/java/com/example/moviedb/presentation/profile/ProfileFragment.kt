@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import com.example.moviedb.R
 import com.example.moviedb.data.models.Account
 import com.example.moviedb.databinding.ProfileFragmentBinding
-import com.example.moviedb.presentation.activity.MainActivity
 import com.example.moviedb.domain.usecase.setAvatar
+import com.example.moviedb.presentation.activity.MainActivity
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -53,11 +53,10 @@ class ProfileFragment : MvpAppCompatFragment(), ProfileView {
 
         val avatar = account.avatar.tmdb.avatarPath
 
-        if (avatar.isEmpty())
+        if (avatar.isNullOrEmpty())
             profileBinding?.avatar?.setAvatar(R.drawable.avatar)
         else
             profileBinding?.avatar?.setAvatar(avatar)
-
     }
 
     override fun visibleLoading() {

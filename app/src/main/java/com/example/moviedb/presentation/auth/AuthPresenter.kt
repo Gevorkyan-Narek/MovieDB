@@ -1,7 +1,7 @@
 package com.example.moviedb.presentation.auth
 
-import com.example.moviedb.data.App
 import com.example.moviedb.R
+import com.example.moviedb.data.App
 import com.example.moviedb.domain.usecase.AuthCallback
 import com.example.moviedb.domain.usecase.AuthUseCase
 import moxy.MvpPresenter

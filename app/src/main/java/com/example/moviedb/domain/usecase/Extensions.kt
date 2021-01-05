@@ -2,7 +2,6 @@ package com.example.moviedb.domain.usecase
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 fun ImageView.setAvatar(avatar: String) {
     Glide.with(context)

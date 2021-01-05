@@ -16,4 +16,5 @@
     <color name="light_black">#282C3F</color>
     <color name="orange">#FE4E27</color>
     <color name="red">#E1172F</color>
+    <color name="transparent_light_black">#E6282C3F</color>
 </resources>

@@ -2,8 +2,8 @@ package com.example.moviedb.presentation.profile
 
 import com.example.moviedb.data.App
 import com.example.moviedb.data.models.Account
-import com.example.moviedb.domain.usecase.AuthUseCase
 import com.example.moviedb.domain.usecase.AccountCallback
+import com.example.moviedb.domain.usecase.AuthUseCase
 import moxy.MvpPresenter
 import javax.inject.Inject
 

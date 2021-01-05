@@ -4,7 +4,6 @@ import com.example.moviedb.data.models.Account
 import com.example.moviedb.data.models.Session
 import com.example.moviedb.data.models.Token
 import io.reactivex.Completable
-import io.reactivex.Maybe
 import io.reactivex.Single
 import retrofit2.http.*
 

@@ -23,20 +23,21 @@
         android:src="@drawable/girl_picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/header"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription" />
 
     <SearchView
         android:id="@+id/searchView"
-        style="@style/Body.SearchView"
+        style="@style/SearchView"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginTop="@dimen/spaceIntoSubHeaderAndEditText"
+        android:background="@drawable/corner_rectangle"
         android:iconifiedByDefault="false"
         android:queryHint="Поиск фильмов"
+        android:theme="@style/SearchViewTheme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
