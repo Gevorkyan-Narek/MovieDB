@@ -1,14 +1,14 @@
-package com.example.moviedb.presentation.ui.profile
+package com.example.moviedb.presentation.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.moviedb.R
+import com.example.moviedb.data.models.Account
 import com.example.moviedb.databinding.ProfileFragmentBinding
-import com.example.moviedb.presentation.presenters.ProfilePresenter
-import com.example.moviedb.presentation.ui.activity.MainActivity
-import com.example.moviedb.setAvatar
+import com.example.moviedb.presentation.activity.MainActivity
+import com.example.moviedb.domain.usecase.setAvatar
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -31,31 +31,40 @@ class ProfileFragment : MvpAppCompatFragment(), ProfileView {
 
     override fun onStart() {
         super.onStart()
-        profilePresenter.openProfile()
 
         profileBinding?.exit?.setOnClickListener {
             profilePresenter.exitProfile()
         }
     }
 
-
     override fun onDestroyView() {
         profileBinding = null
         super.onDestroyView()
     }
 
-    override fun setName(name: String) {
-        profileBinding?.name?.text = name
-    }
+    override fun exitProfile() = (activity as MainActivity).presenter.exitAuth()
 
-    override fun setAvatar(avatar: String?) {
-        if (avatar == null)
+    override fun getProfile(account: Account) {
+        profileBinding?.name?.text =
+            if (account.name.isNotEmpty())
+                account.name
+            else
+                account.username
+
+        val avatar = account.avatar.tmdb.avatarPath
+
+        if (avatar.isEmpty())
             profileBinding?.avatar?.setAvatar(R.drawable.avatar)
         else
-            profileBinding?.avatar?.setAvatar("https://image.tmdb.org/t/p/w500$avatar")
+            profileBinding?.avatar?.setAvatar(avatar)
+
     }
 
-    override fun exitProfile() {
-        (activity as MainActivity).presenter.exitAuth()
+    override fun visibleLoading() {
+        profileBinding?.progressBar?.visibility = View.VISIBLE
+    }
+
+    override fun goneLoading() {
+        profileBinding?.progressBar?.visibility = View.GONE
     }
 }

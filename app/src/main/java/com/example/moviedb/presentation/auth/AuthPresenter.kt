@@ -1,10 +1,9 @@
-package com.example.moviedb.presentation.presenters
+package com.example.moviedb.presentation.auth
 
-import com.example.moviedb.App
+import com.example.moviedb.data.App
 import com.example.moviedb.R
 import com.example.moviedb.domain.usecase.AuthCallback
 import com.example.moviedb.domain.usecase.AuthUseCase
-import com.example.moviedb.presentation.ui.auth.AuthView
 import moxy.MvpPresenter
 import retrofit2.HttpException
 import javax.inject.Inject
@@ -16,7 +15,7 @@ class AuthPresenter : MvpPresenter<AuthView>(), AuthCallback {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        App.getComponentAuth().inject(this)
+        App.getAuthComponent().inject(this)
     }
 
     fun authorize(login: String, password: String) = authUseCase.authorize(login, password, this)
@@ -25,9 +24,9 @@ class AuthPresenter : MvpPresenter<AuthView>(), AuthCallback {
 
     override fun error(error: Throwable) {
         if (error is HttpException && error.code() == 401) {
-            viewState.error(R.string.wrong_login_and_password)
+            viewState.fail(R.string.wrong_login_and_password)
         } else {
-            viewState.error(R.string.something_wrong)
+            viewState.fail(R.string.something_wrong)
         }
     }
 }

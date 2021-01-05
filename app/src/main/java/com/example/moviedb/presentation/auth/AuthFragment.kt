@@ -1,4 +1,4 @@
-package com.example.moviedb.presentation.ui.auth
+package com.example.moviedb.presentation.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.moviedb.R
 import com.example.moviedb.databinding.AuthFragmentBinding
-import com.example.moviedb.presentation.presenters.AuthPresenter
-import com.example.moviedb.presentation.ui.activity.MainActivity
+import com.example.moviedb.presentation.activity.MainActivity
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
@@ -30,7 +29,9 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
 
     override fun onStart() {
         super.onStart()
+
         authBinding?.enter?.setOnClickListener {
+            authBinding?.progressBar?.visibility = View.VISIBLE
             authPresenter.authorize(
                 authBinding?.loginInput?.text.toString(),
                 authBinding?.passwordInput?.text.toString()
@@ -38,7 +39,8 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
         }
     }
 
-    override fun error(message: Int) {
+    override fun fail(message: Int) {
+        authBinding?.progressBar?.visibility = View.INVISIBLE
         authBinding?.enter?.apply {
             setBackgroundColor(
                 resources.getColor(
@@ -52,11 +54,12 @@ class AuthFragment : MvpAppCompatFragment(), AuthView {
     }
 
     override fun success() {
+        authBinding?.progressBar?.visibility = View.INVISIBLE
         (activity as MainActivity).presenter.successAuth()
     }
 
     override fun onDestroyView() {
-        authBinding = null
         super.onDestroyView()
+        authBinding = null
     }
 }

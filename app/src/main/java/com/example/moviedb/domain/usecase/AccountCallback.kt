@@ -2,9 +2,8 @@ package com.example.moviedb.domain.usecase
 
 import com.example.moviedb.data.models.Account
 
-interface ProfileCallback {
+interface AccountCallback {
 
     fun getAccount(account: Account)
-
     fun exitAccount()
 }

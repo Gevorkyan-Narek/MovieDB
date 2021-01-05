@@ -1,9 +1,9 @@
 package com.example.moviedb.data.di
 
-import com.example.moviedb.data.di.RetrofitModule
+import com.example.moviedb.domain.usecase.AuthSingle
 import com.example.moviedb.domain.usecase.AuthUseCase
-import com.example.moviedb.presentation.presenters.AuthPresenter
-import com.example.moviedb.presentation.presenters.ProfilePresenter
+import com.example.moviedb.presentation.auth.AuthPresenter
+import com.example.moviedb.presentation.profile.ProfilePresenter
 import dagger.Component
 import javax.inject.Singleton
 
@@ -11,7 +11,5 @@ import javax.inject.Singleton
 @Singleton
 interface RetrofitComponent {
 
-    fun inject(authPresenter: AuthPresenter)
-    fun inject(profilePresenter: ProfilePresenter)
-    fun inject(authUseCase: AuthUseCase)
+    fun inject(authSingle: AuthSingle)
 }

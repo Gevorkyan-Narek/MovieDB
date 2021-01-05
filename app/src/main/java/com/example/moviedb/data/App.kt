@@ -1,4 +1,4 @@
-package com.example.moviedb
+package com.example.moviedb.data
 
 import android.app.Application
 import com.example.moviedb.data.di.AuthComponent
@@ -10,10 +10,10 @@ class App : Application() {
 
     companion object {
         private lateinit var retrofit: RetrofitComponent
-        fun getComponent(): RetrofitComponent = retrofit
+        fun getRetrofitComponent(): RetrofitComponent = retrofit
 
         private lateinit var auth: AuthComponent
-        fun getComponentAuth(): AuthComponent = auth
+        fun getAuthComponent(): AuthComponent = auth
     }
 
     override fun onCreate() {
