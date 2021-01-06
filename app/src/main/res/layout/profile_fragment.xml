@@ -41,12 +41,11 @@
         tools:text="name" />
 
     <TextView
-        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:textColor="@color/gray"
-        android:textSize="@dimen/textSize"
+        android:textSize="@dimen/defaultTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name"

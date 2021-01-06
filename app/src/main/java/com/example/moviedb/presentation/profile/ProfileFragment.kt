@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.example.moviedb.R
 import com.example.moviedb.data.models.Account
 import com.example.moviedb.databinding.ProfileFragmentBinding
-import com.example.moviedb.domain.usecase.setAvatar
+import com.example.moviedb.domain.setAvatar
 import com.example.moviedb.presentation.activity.MainActivity
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter

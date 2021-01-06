@@ -1,4 +1,4 @@
-package com.example.moviedb.domain.usecase
+package com.example.moviedb.domain
 
 interface AuthCallback {
 

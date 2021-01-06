@@ -24,7 +24,7 @@
     <style name="Body">
         <item name="android:layout_marginStart">@dimen/horizontalMargin</item>
         <item name="android:layout_marginEnd">@dimen/horizontalMargin</item>
-        <item name="android:textSize">@dimen/textSize</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
     </style>
 
     <style name="SearchViewTheme">

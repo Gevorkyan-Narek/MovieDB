@@ -1,4 +1,4 @@
-package com.example.moviedb.domain.usecase
+package com.example.moviedb.domain
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
