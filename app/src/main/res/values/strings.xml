@@ -15,5 +15,4 @@
     <string name="favourite">Избранное</string>
     <string name="you_not_added_any_movies">Вы не добавили ни одного фильма</string>
     <string name="find_favourite_movies">Найти любимые фильмы</string>
-    <string name="check_internet_connection">Что-то пошло не так, проверьте соединение</string>
 </resources>

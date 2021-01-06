@@ -2,6 +2,8 @@ package com.example.moviedb.domain.usecase
 
 import android.util.Log
 import com.example.moviedb.data.App
+import com.example.moviedb.domain.AccountCallback
+import com.example.moviedb.domain.AuthCallback
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
